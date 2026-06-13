@@ -12,8 +12,6 @@
     "dev": "NODE_ENV=development nodemon index.js | pino-pretty",
     "lint": "eslint",
     "fix": "eslint --fix",
-    "build-image": "gcloud builds submit --pack image=us-central1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/samples/microservice-template:manual",
-    "deploy": "gcloud run deploy microservice-template --image us-central1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/samples/microservice-template:manual --region us-central1",
     "test": "mocha test/app.test.js --check-leaks",
     "system-test": "mocha test/system.test.js --timeout=180000"
   },
@@ -24,7 +22,9 @@
     "gcp-metadata": "^8.0.0",
     "google-auth-library": "^10.0.0",
     "pino": "^10.0.0",
-    "pino-http": "^11.0.0"
+    "pino-http": "^11.0.0",
+    "@google-cloud/storage": "^7.14.0",
+    "csv-parse": "^5.5.6"
   },
   "devDependencies": {
     "eslint": "^9.0.0",
